@@ -1,0 +1,24 @@
+<input type="text" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button [disabled]="!userName" (click)="resetUserName()">Reset UserName</button>
+
+<hr>
+
+<button (click)="handleDisplayP()">Display Details</button>
+
+<p *ngIf="displayP">Lorem ipsum dolor sit amet.</p>
+
+<div *ngIf="displayP">
+    <span *ngFor="let click of clicks; let i = index" 
+    [ngStyle]="{
+        'background-color': i >= 4 && 'blue',
+        'color': i >= 4 && 'white',
+        'padding': '12px',
+        'height': '20px',
+        'width': '20px',
+        'border-radius': '50%',
+        }"
+    >
+    {{click}}
+</span>
+</div>
